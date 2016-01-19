@@ -188,6 +188,8 @@
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
       <PreprocessorDefinitions>LIBVORBIS_EXPORTS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformationFile>$(IntDir)bsc\</BrowseInformationFile>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -197,25 +199,38 @@
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
-      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+      <Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
 IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
-)</Command>
+)
+      </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>MKDIR "$(OutDir)..\..\include"
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+FOR %%H IN (codec.h vorbisenc.h vorbisfile.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 MKDIR "$(OutDir)..\..\licenses"
-COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -234,25 +249,38 @@ COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
-      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+      <Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
 IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
-)</Command>
+)
+      </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>MKDIR "$(OutDir)..\..\include"
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+FOR %%H IN (codec.h vorbisenc.h vorbisfile.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 MKDIR "$(OutDir)..\..\licenses"
-COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -274,25 +302,38 @@ COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
-      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+      <Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
 IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
-)</Command>
+)
+      </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>MKDIR "$(OutDir)..\..\include"
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+FOR %%H IN (codec.h vorbisenc.h vorbisfile.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 MKDIR "$(OutDir)..\..\licenses"
-COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -313,25 +354,38 @@ COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
-      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+      <Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
 IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
-)</Command>
+)
+      </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>MKDIR "$(OutDir)..\..\include"
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+FOR %%H IN (codec.h vorbisenc.h vorbisfile.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 MKDIR "$(OutDir)..\..\licenses"
-COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
@@ -356,25 +410,38 @@ COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PreBuildEvent>
-      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+      <Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
 IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
-)</Command>
+)
+      </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>MKDIR "$(OutDir)..\..\include"
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+FOR %%H IN (codec.h vorbisenc.h vorbisfile.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 MKDIR "$(OutDir)..\..\licenses"
-COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <ClCompile>
@@ -445,25 +512,38 @@ COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PreBuildEvent>
-      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+      <Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
 IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
-)</Command>
+)
+      </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>MKDIR "$(OutDir)..\..\include"
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+FOR %%H IN (codec.h vorbisenc.h vorbisfile.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 MKDIR "$(OutDir)..\..\licenses"
-COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <ClCompile>
@@ -491,25 +571,38 @@ COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PreBuildEvent>
-      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+      <Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
 IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
   RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
-)</Command>
+)
+      </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>MKDIR "$(OutDir)..\..\include"
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+FOR %%H IN (codec.h vorbisenc.h vorbisfile.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
 
 MKDIR "$(OutDir)..\..\licenses"
-COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\lib\analysis.c" />
