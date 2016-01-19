@@ -186,8 +186,8 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBVORBIS_EXPORTS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -196,6 +196,26 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -203,8 +223,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBVORBIS_EXPORTS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Lib>
@@ -213,6 +233,26 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -222,9 +262,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LIBVORBIS_EXPORTS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
@@ -233,6 +273,26 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -242,9 +302,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LIBVORBIS_EXPORTS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Lib>
       <SubSystem>Windows</SubSystem>
@@ -252,6 +312,26 @@
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
@@ -259,9 +339,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LIBVORBIS_EXPORTS;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -271,9 +351,30 @@
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbis.def</ModuleDefinitionFile>
+      <AdditionalDependencies>oggd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <ClCompile>
@@ -281,9 +382,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LIBVORBIS_EXPORTS;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -293,8 +394,29 @@
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbis.def</ModuleDefinitionFile>
+      <AdditionalDependencies>oggd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <ClCompile>
@@ -304,9 +426,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LIBVORBIS_EXPORTS;WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -316,11 +438,32 @@
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbis.def</ModuleDefinitionFile>
+      <AdditionalDependencies>ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LargeAddressAware>true</LargeAddressAware>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <ClCompile>
@@ -330,10 +473,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(OutDir)..\..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ShowIncludes>true</ShowIncludes>
+      <PreprocessorDefinitions>LIBVORBIS_EXPORTS;NDEBUG;_WINDOWS;_USRDLL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -343,11 +485,102 @@
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbis.def</ModuleDefinitionFile>
+      <AdditionalDependencies>ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PreBuildEvent>
+      <Command>IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\include\vorbis\codec.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisenc.h" "$(OutDir)..\..\include\$(ProjectName)"
+COPY "$(ProjectDir)..\..\include\vorbis\vorbisfile.h" "$(OutDir)..\..\include\$(ProjectName)"
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING" "$(OutDir)..\..\licenses\$(ProjectName).txt"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lib\analysis.c" />
+    <ClCompile Include="..\..\lib\bitrate.c" />
+    <ClCompile Include="..\..\lib\block.c" />
+    <ClCompile Include="..\..\lib\codebook.c" />
+    <ClCompile Include="..\..\lib\envelope.c" />
+    <ClCompile Include="..\..\lib\floor0.c" />
+    <ClCompile Include="..\..\lib\floor1.c" />
+    <ClCompile Include="..\..\lib\info.c" />
+    <ClCompile Include="..\..\lib\lookup.c" />
+    <ClCompile Include="..\..\lib\lpc.c" />
+    <ClCompile Include="..\..\lib\lsp.c" />
+    <ClCompile Include="..\..\lib\mapping0.c" />
+    <ClCompile Include="..\..\lib\mdct.c" />
+    <ClCompile Include="..\..\lib\psy.c" />
+    <ClCompile Include="..\..\lib\registry.c" />
+    <ClCompile Include="..\..\lib\res0.c" />
+    <ClCompile Include="..\..\lib\sharedbook.c" />
+    <ClCompile Include="..\..\lib\smallft.c" />
+    <ClCompile Include="..\..\lib\synthesis.c" />
+    <ClCompile Include="..\..\lib\vorbisenc.c" />
+    <ClCompile Include="..\..\lib\window.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\vorbis.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\lib\backends.h" />
+    <ClInclude Include="..\..\lib\bitrate.h" />
+    <ClInclude Include="..\..\lib\codebook.h" />
+    <ClInclude Include="..\..\include\vorbis\codec.h" />
+    <ClInclude Include="..\..\lib\codec_internal.h" />
+    <ClInclude Include="..\..\lib\envelope.h" />
+    <ClInclude Include="..\..\lib\modes\floor_all.h" />
+    <ClInclude Include="..\..\lib\books\floor\floor_books.h" />
+    <ClInclude Include="..\..\lib\highlevel.h" />
+    <ClInclude Include="..\..\lib\lookup.h" />
+    <ClInclude Include="..\..\lib\lookup_data.h" />
+    <ClInclude Include="..\..\lib\lpc.h" />
+    <ClInclude Include="..\..\lib\lsp.h" />
+    <ClInclude Include="..\..\lib\masking.h" />
+    <ClInclude Include="..\..\lib\mdct.h" />
+    <ClInclude Include="..\..\lib\misc.h" />
+    <ClInclude Include="..\..\lib\os.h" />
+    <ClInclude Include="..\..\lib\psy.h" />
+    <ClInclude Include="..\..\lib\modes\psych_11.h" />
+    <ClInclude Include="..\..\lib\modes\psych_16.h" />
+    <ClInclude Include="..\..\lib\modes\psych_44.h" />
+    <ClInclude Include="..\..\lib\modes\psych_8.h" />
+    <ClInclude Include="..\..\lib\registry.h" />
+    <ClInclude Include="..\..\lib\books\coupled\res_books_stereo.h" />
+    <ClInclude Include="..\..\lib\books\uncoupled\res_books_uncoupled.h" />
+    <ClInclude Include="..\..\lib\modes\residue_16.h" />
+    <ClInclude Include="..\..\lib\modes\residue_44.h" />
+    <ClInclude Include="..\..\lib\modes\residue_44u.h" />
+    <ClInclude Include="..\..\lib\modes\residue_8.h" />
+    <ClInclude Include="..\..\lib\scales.h" />
+    <ClInclude Include="..\..\lib\modes\setup_11.h" />
+    <ClInclude Include="..\..\lib\modes\setup_16.h" />
+    <ClInclude Include="..\..\lib\modes\setup_22.h" />
+    <ClInclude Include="..\..\lib\modes\setup_32.h" />
+    <ClInclude Include="..\..\lib\modes\setup_44.h" />
+    <ClInclude Include="..\..\lib\modes\setup_44u.h" />
+    <ClInclude Include="..\..\lib\modes\setup_8.h" />
+    <ClInclude Include="..\..\lib\modes\setup_X.h" />
+    <ClInclude Include="..\..\lib\smallft.h" />
+    <ClInclude Include="..\..\include\vorbis\vorbisenc.h" />
+    <ClInclude Include="..\..\include\vorbis\vorbisfile.h" />
+    <ClInclude Include="..\..\lib\window.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
