@@ -35,9 +35,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8BDA90EB-C39C-49B3-9FC0-3B86E6570A6B}</ProjectGuid>
+    <ProjectGuid>{82C97BEC-52BF-4700-AC99-39ADBAEDB1EA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>vorbis</RootNamespace>
+    <RootNamespace>vorbisenc</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -196,7 +196,7 @@
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>liboggd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libvorbisd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
       <Command>
@@ -217,7 +217,7 @@ SETLOCAL EnableDelayedExpansion EnableExtensions
 MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-FOR %%H IN (codec.h) DO (
+FOR %%H IN (vorbisenc.h) DO (
   SET "_HEADER=%%H"
   COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
 )
@@ -248,7 +248,7 @@ ENDLOCAL
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>liboggd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libvorbisd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
       <Command>
@@ -269,7 +269,7 @@ SETLOCAL EnableDelayedExpansion EnableExtensions
 MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-FOR %%H IN (codec.h) DO (
+FOR %%H IN (vorbisenc.h) DO (
   SET "_HEADER=%%H"
   COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
 )
@@ -303,7 +303,7 @@ ENDLOCAL
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libvorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
       <Command>
@@ -324,7 +324,7 @@ SETLOCAL EnableDelayedExpansion EnableExtensions
 MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-FOR %%H IN (codec.h) DO (
+FOR %%H IN (vorbisenc.h) DO (
   SET "_HEADER=%%H"
   COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
 )
@@ -357,7 +357,7 @@ ENDLOCAL
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libvorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
       <Command>
@@ -378,7 +378,7 @@ SETLOCAL EnableDelayedExpansion EnableExtensions
 MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-FOR %%H IN (codec.h) DO (
+FOR %%H IN (vorbisenc.h) DO (
   SET "_HEADER=%%H"
   COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
 )
@@ -413,8 +413,8 @@ ENDLOCAL
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbis.def</ModuleDefinitionFile>
-      <AdditionalDependencies>oggd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbisenc.def</ModuleDefinitionFile>
+      <AdditionalDependencies>vorbisd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PreBuildEvent>
@@ -436,7 +436,7 @@ SETLOCAL EnableDelayedExpansion EnableExtensions
 MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-FOR %%H IN (codec.h) DO (
+FOR %%H IN (vorbisenc.h) DO (
   SET "_HEADER=%%H"
   COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
 )
@@ -471,8 +471,8 @@ ENDLOCAL
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbis.def</ModuleDefinitionFile>
-      <AdditionalDependencies>oggd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbisenc.def</ModuleDefinitionFile>
+      <AdditionalDependencies>vorbisd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -493,7 +493,7 @@ SETLOCAL EnableDelayedExpansion EnableExtensions
 MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-FOR %%H IN (codec.h) DO (
+FOR %%H IN (vorbisenc.h) DO (
   SET "_HEADER=%%H"
   COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
 )
@@ -530,8 +530,8 @@ ENDLOCAL
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbis.def</ModuleDefinitionFile>
-      <AdditionalDependencies>ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbisenc.def</ModuleDefinitionFile>
+      <AdditionalDependencies>vorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LargeAddressAware>true</LargeAddressAware>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
@@ -555,7 +555,7 @@ SETLOCAL EnableDelayedExpansion EnableExtensions
 MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-FOR %%H IN (codec.h) DO (
+FOR %%H IN (vorbisenc.h) DO (
   SET "_HEADER=%%H"
   COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
 )
@@ -592,8 +592,8 @@ ENDLOCAL
       <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ProgramDatabaseFile>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbis.def</ModuleDefinitionFile>
-      <AdditionalDependencies>ogg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)..\..\win32\vorbisenc.def</ModuleDefinitionFile>
+      <AdditionalDependencies>vorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
@@ -616,7 +616,7 @@ SETLOCAL EnableDelayedExpansion EnableExtensions
 MKDIR "$(OutDir)..\..\include"
 MKDIR "$(OutDir)..\..\include\$(ProjectName)"
 
-FOR %%H IN (codec.h) DO (
+FOR %%H IN (vorbisenc.h) DO (
   SET "_HEADER=%%H"
   COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
 )
@@ -632,71 +632,13 @@ ENDLOCAL
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\lib\analysis.c" />
-    <ClCompile Include="..\..\lib\bitrate.c" />
-    <ClCompile Include="..\..\lib\block.c" />
-    <ClCompile Include="..\..\lib\codebook.c" />
-    <ClCompile Include="..\..\lib\envelope.c" />
-    <ClCompile Include="..\..\lib\floor0.c" />
-    <ClCompile Include="..\..\lib\floor1.c" />
-    <ClCompile Include="..\..\lib\info.c" />
-    <ClCompile Include="..\..\lib\lookup.c" />
-    <ClCompile Include="..\..\lib\lpc.c" />
-    <ClCompile Include="..\..\lib\lsp.c" />
-    <ClCompile Include="..\..\lib\mapping0.c" />
-    <ClCompile Include="..\..\lib\mdct.c" />
-    <ClCompile Include="..\..\lib\psy.c" />
-    <ClCompile Include="..\..\lib\registry.c" />
-    <ClCompile Include="..\..\lib\res0.c" />
-    <ClCompile Include="..\..\lib\sharedbook.c" />
-    <ClCompile Include="..\..\lib\smallft.c" />
-    <ClCompile Include="..\..\lib\synthesis.c" />
-    <ClCompile Include="..\..\lib\window.c" />
+    <ClCompile Include="..\..\lib\vorbisenc.c" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\win32\vorbis.def" />
+    <None Include="..\..\win32\vorbisenc.def" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\lib\backends.h" />
-    <ClInclude Include="..\..\lib\bitrate.h" />
-    <ClInclude Include="..\..\lib\codebook.h" />
-    <ClInclude Include="..\..\include\vorbis\codec.h" />
-    <ClInclude Include="..\..\lib\codec_internal.h" />
-    <ClInclude Include="..\..\lib\envelope.h" />
-    <ClInclude Include="..\..\lib\modes\floor_all.h" />
-    <ClInclude Include="..\..\lib\books\floor\floor_books.h" />
-    <ClInclude Include="..\..\lib\highlevel.h" />
-    <ClInclude Include="..\..\lib\lookup.h" />
-    <ClInclude Include="..\..\lib\lookup_data.h" />
-    <ClInclude Include="..\..\lib\lpc.h" />
-    <ClInclude Include="..\..\lib\lsp.h" />
-    <ClInclude Include="..\..\lib\masking.h" />
-    <ClInclude Include="..\..\lib\mdct.h" />
-    <ClInclude Include="..\..\lib\misc.h" />
-    <ClInclude Include="..\..\lib\os.h" />
-    <ClInclude Include="..\..\lib\psy.h" />
-    <ClInclude Include="..\..\lib\modes\psych_11.h" />
-    <ClInclude Include="..\..\lib\modes\psych_16.h" />
-    <ClInclude Include="..\..\lib\modes\psych_44.h" />
-    <ClInclude Include="..\..\lib\modes\psych_8.h" />
-    <ClInclude Include="..\..\lib\registry.h" />
-    <ClInclude Include="..\..\lib\books\coupled\res_books_stereo.h" />
-    <ClInclude Include="..\..\lib\books\uncoupled\res_books_uncoupled.h" />
-    <ClInclude Include="..\..\lib\modes\residue_16.h" />
-    <ClInclude Include="..\..\lib\modes\residue_44.h" />
-    <ClInclude Include="..\..\lib\modes\residue_44u.h" />
-    <ClInclude Include="..\..\lib\modes\residue_8.h" />
-    <ClInclude Include="..\..\lib\scales.h" />
-    <ClInclude Include="..\..\lib\modes\setup_11.h" />
-    <ClInclude Include="..\..\lib\modes\setup_16.h" />
-    <ClInclude Include="..\..\lib\modes\setup_22.h" />
-    <ClInclude Include="..\..\lib\modes\setup_32.h" />
-    <ClInclude Include="..\..\lib\modes\setup_44.h" />
-    <ClInclude Include="..\..\lib\modes\setup_44u.h" />
-    <ClInclude Include="..\..\lib\modes\setup_8.h" />
-    <ClInclude Include="..\..\lib\modes\setup_X.h" />
-    <ClInclude Include="..\..\lib\smallft.h" />
-    <ClInclude Include="..\..\lib\window.h" />
+    <ClInclude Include="..\..\include\vorbis\vorbisenc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
