@@ -204,8 +204,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\vorbisfile.h" (
+  DEL "$(OutDir)..\..\include\vorbis\vorbisfile.h"
 )
       </Command>
     </PreBuildEvent>
@@ -215,11 +215,11 @@ ECHO Off
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
 MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+MKDIR "$(OutDir)..\..\include\vorbis"
 
 FOR %%H IN (vorbisfile.h) DO (
   SET "_HEADER=%%H"
-  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+  COPY "$(ProjectDir)..\..\include\vorbis\!_HEADER!" "$(OutDir)..\..\include\vorbis"
 )
 
 MKDIR "$(OutDir)..\..\licenses"
@@ -256,8 +256,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\vorbisfile.h" (
+  DEL "$(OutDir)..\..\include\vorbis\vorbisfile.h"
 )
       </Command>
     </PreBuildEvent>
@@ -267,11 +267,11 @@ ECHO Off
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
 MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+MKDIR "$(OutDir)..\..\include\vorbis"
 
 FOR %%H IN (vorbisfile.h) DO (
   SET "_HEADER=%%H"
-  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+  COPY "$(ProjectDir)..\..\include\vorbis\!_HEADER!" "$(OutDir)..\..\include\vorbis"
 )
 
 MKDIR "$(OutDir)..\..\licenses"
@@ -311,8 +311,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\vorbisfile.h" (
+  DEL "$(OutDir)..\..\include\vorbis\vorbisfile.h"
 )
       </Command>
     </PreBuildEvent>
@@ -322,11 +322,11 @@ ECHO Off
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
 MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+MKDIR "$(OutDir)..\..\include\vorbis"
 
 FOR %%H IN (vorbisfile.h) DO (
   SET "_HEADER=%%H"
-  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+  COPY "$(ProjectDir)..\..\include\vorbis\!_HEADER!" "$(OutDir)..\..\include\vorbis"
 )
 
 MKDIR "$(OutDir)..\..\licenses"
@@ -365,8 +365,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\vorbisfile.h" (
+  DEL "$(OutDir)..\..\include\vorbis\vorbisfile.h"
 )
       </Command>
     </PreBuildEvent>
@@ -376,11 +376,11 @@ ECHO Off
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
 MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+MKDIR "$(OutDir)..\..\include\vorbis"
 
 FOR %%H IN (vorbisfile.h) DO (
   SET "_HEADER=%%H"
-  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+  COPY "$(ProjectDir)..\..\include\vorbis\!_HEADER!" "$(OutDir)..\..\include\vorbis"
 )
 
 MKDIR "$(OutDir)..\..\licenses"
@@ -423,8 +423,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\vorbisfile.h" (
+  DEL "$(OutDir)..\..\include\vorbis\vorbisfile.h"
 )
       </Command>
     </PreBuildEvent>
@@ -434,11 +434,11 @@ ECHO Off
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
 MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+MKDIR "$(OutDir)..\..\include\vorbis"
 
 FOR %%H IN (vorbisfile.h) DO (
   SET "_HEADER=%%H"
-  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+  COPY "$(ProjectDir)..\..\include\vorbis\!_HEADER!" "$(OutDir)..\..\include\vorbis"
 )
 
 MKDIR "$(OutDir)..\..\licenses"
@@ -480,8 +480,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\vorbisfile.h" (
+  DEL "$(OutDir)..\..\include\vorbis\vorbisfile.h"
 )
       </Command>
     </PreBuildEvent>
@@ -491,11 +491,11 @@ ECHO Off
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
 MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+MKDIR "$(OutDir)..\..\include\vorbis"
 
 FOR %%H IN (vorbisfile.h) DO (
   SET "_HEADER=%%H"
-  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+  COPY "$(ProjectDir)..\..\include\vorbis\!_HEADER!" "$(OutDir)..\..\include\vorbis"
 )
 
 MKDIR "$(OutDir)..\..\licenses"
@@ -542,8 +542,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\vorbisfile.h" (
+  DEL "$(OutDir)..\..\include\vorbis\vorbisfile.h"
 )
       </Command>
     </PreBuildEvent>
@@ -553,11 +553,11 @@ ECHO Off
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
 MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+MKDIR "$(OutDir)..\..\include\vorbis"
 
 FOR %%H IN (vorbisfile.h) DO (
   SET "_HEADER=%%H"
-  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+  COPY "$(ProjectDir)..\..\include\vorbis\!_HEADER!" "$(OutDir)..\..\include\vorbis"
 )
 
 MKDIR "$(OutDir)..\..\licenses"
@@ -603,8 +603,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\vorbisfile.h" (
+  DEL "$(OutDir)..\..\include\vorbis\vorbisfile.h"
 )
       </Command>
     </PreBuildEvent>
@@ -614,11 +614,11 @@ ECHO Off
 SETLOCAL EnableDelayedExpansion EnableExtensions
 
 MKDIR "$(OutDir)..\..\include"
-MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+MKDIR "$(OutDir)..\..\include\vorbis"
 
 FOR %%H IN (vorbisfile.h) DO (
   SET "_HEADER=%%H"
-  COPY "$(ProjectDir)..\..\include\$(ProjectName)\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+  COPY "$(ProjectDir)..\..\include\vorbis\!_HEADER!" "$(OutDir)..\..\include\vorbis"
 )
 
 MKDIR "$(OutDir)..\..\licenses"

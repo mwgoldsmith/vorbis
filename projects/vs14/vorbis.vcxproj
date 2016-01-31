@@ -204,8 +204,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\codec.h" (
+  DEL "$(OutDir)..\..\include\vorbis\codec.h"
 )
       </Command>
     </PreBuildEvent>
@@ -256,8 +256,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\codec.h" (
+  DEL "$(OutDir)..\..\include\vorbis\codec.h"
 )
       </Command>
     </PreBuildEvent>
@@ -311,8 +311,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\codec.h" (
+  DEL "$(OutDir)..\..\include\vorbis\codec.h"
 )
       </Command>
     </PreBuildEvent>
@@ -365,8 +365,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\codec.h" (
+  DEL "$(OutDir)..\..\include\vorbis\codec.h"
 )
       </Command>
     </PreBuildEvent>
@@ -423,8 +423,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\codec.h" (
+  DEL "$(OutDir)..\..\include\vorbis\codec.h"
 )
       </Command>
     </PreBuildEvent>
@@ -480,8 +480,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\codec.h" (
+  DEL "$(OutDir)..\..\include\vorbis\codec.h"
 )
       </Command>
     </PreBuildEvent>
@@ -542,8 +542,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\codec.h" (
+  DEL "$(OutDir)..\..\include\vorbis\codec.h"
 )
       </Command>
     </PreBuildEvent>
@@ -603,8 +603,8 @@ IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
   DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
 )
 
-IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+IF EXIST "$(OutDir)..\..\include\vorbis\codec.h" (
+  DEL "$(OutDir)..\..\include\vorbis\codec.h"
 )
       </Command>
     </PreBuildEvent>
