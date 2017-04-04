@@ -72,9 +72,6 @@
     <ClCompile Include="..\..\lib\synthesis.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\lib\vorbisenc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\lib\window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -197,18 +194,12 @@
     <ClInclude Include="..\..\lib\smallft.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\vorbis\vorbisenc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\vorbis\vorbisfile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\lib\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\vorbis.def">
+    <None Include="..\..\win32\vorbis.def">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
